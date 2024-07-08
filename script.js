@@ -90,18 +90,23 @@ tl.to(".parent .child",{
    
 },"a")
 .to(".first",{
-   duration:3,
-   y:"-12vw"
+   duration:5,
+   y:"-12vw",
+   delay:1,
 },"a")
 .to(".second",{
-   duration:3,
+   duration:5,
 
-   y:"-255vh"
+   y:"-255vh",
+   delay:1,
+
 },"a")
 .to(".third",{
-   duration:3,
+   duration:5,
    
-   y:"-512vh"
+   y:"-512vh",
+   delay:1,
+
 },"a")
 
 .to(".darkGreen",{
@@ -142,6 +147,67 @@ tl.to(".parent .child",{
 })
 
 
+// page1 
 
+// gsap.to(".video video",{
+//    ease:Circ,
+//    duration:1.2,
+//    width:"100%",
+//    height:"98%",
+// });
+let t3 = gsap.timeline();
+t3.to(".about",{
+   scrollTrigger:{
+      trigger:".video",
+      start:"50% 40%",
+      end:"50% 50%",
+      markers:true,
+      scrub:1,
+      // pin:true,
+   }
+})
+t3.to(".video video",{
+   y:100,
+})
+// gsap.to(".about",{
+//    top:"-100%",
+//    ease:Circ.easeInOut,
+//    duration:1,
+//    scrollTrigger:{
+//       trigger:".about",
+//       // pin:true,
+//       scroller:"body",
+//       start:"60% 40%",
+//       end:"60% 30%",
+//       markers:true,
+//    }
+// })
+// let t3 = gsap.timeline({scrollTrigger:{
+//    trigger:"",
+//    start:"50% 40%",
+//    end:"60% 30%",
+//    markers:true,
 
+// }})
+// t3.to(".about",{
+//    top:"-100%",
+//    duration:8,
+// })
+// gsap.to(".about", {
+//    scrollTrigger: {
+//        trigger: "#page1",
+//        start: "center 40%",
+//        end: "center 30%",
+//        scrub: true,
+//        markers:true,
+//    },
+//    top: "-100%",
+//    duration:2,
+//    ease:Circ.easeInOut,
 
+// });
+// t2.to(".about",{
+//    top:"-100%",
+//    ease:Circ.easeInOut,
+//    duration:1,
+// })
