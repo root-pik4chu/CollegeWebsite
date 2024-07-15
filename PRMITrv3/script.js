@@ -60,7 +60,7 @@ function magnet(){
                     x: 0,
                     y: 0,
                     duration: 0.8,
-                    ease: 'elastic.out(1, 0.3)',
+                    ease: 'elastic.out(2, 0.3)',
                 });
             });
         }
@@ -81,6 +81,71 @@ function mouseFollower(){
             });
         });
 }
+
+
+//  var path = "M 10 80 Q 95 10 180 80" ;
+
+// var path ="M 10 80 Q 95 80 1500 80";
+// M 10 80 Q 500 80 900 80
+// document.querySelector(".svg-Line").addEventListener("mousemove",function(dets){
+//    var path2 =`M 10 80 Q 500 ${dets.y} 900 80`;
+   
+//    console.log(dets.clientY);
+//    gsap.to("svg path",{
+//       attr :{d:path2}
+
+//    })
+// })
+// document.querySelector(".svg-Line").addEventListener("mouseleave",function(dets){
+//    var path2 =`M 10 80 Q 500 80 900 80`;
+   
+//    console.log(dets.clientY);
+//    gsap.to(".svg-Line svg path",{
+//       attr :{d:path2}
+
+//    })
+// })
+// M 10 80 Q 860 80 1720 80
+// --------------------------------------------------------------------
+function elastic(){
+
+   const svgLine = document.querySelector(".svg-Line");
+const svgPath = document.querySelector("#path");
+
+svgLine.addEventListener("mousemove", function(dets) {
+    const rect = svgLine.getBoundingClientRect();
+    const mouseY = dets.clientY - rect.top; // Get the mouse position relative to the .svg-Line div
+    const mouseX = dets.clientX - rect.left; // Get the mouse horizontal position relative to the .svg-Line div
+    const halfHeight = rect.height / 2;
+    const halfWidth = rect.width / 2;
+    const controlY = mouseY < halfHeight ? 80 - (halfHeight - mouseY) : 80 + (mouseY - halfHeight);
+    const controlX = mouseX < halfWidth ? 860 - (halfWidth - mouseX) : 860 + (mouseX - halfWidth);
+
+    const path2 = `M 10 80 Q ${controlX} ${controlY} 1720 80`;
+
+    gsap.to(svgPath, {
+        attr: { d: path2 }
+    });
+});
+
+svgLine.addEventListener("mouseleave", function() {
+    const path2 = `M 10 80 Q 860 80 1720 80`;
+
+    gsap.to(svgPath, {
+        attr: { d: path2 },
+        duration: .8,
+         ease: "elastic.out(2, 0.3)"
+
+    });
+});
+}
+
+// --------------------------------------------------------------------
+
+
+
+
+
 
 // const button = document.querySelector(".button1");
 // let boundingRect = button.getBoundingClientRect();
@@ -176,11 +241,31 @@ tl.to('.parent .child',{
 
 }
 
+let t4 = gsap
+.timeline({
+   scrollTrigger: {
+         trigger: ".footer-second ",
+         scrub:1,
+         start:"520% 88%",
+         end:"520% 55%",
+         // end: () => "+=" + document.querySelector(".containerThird").offsetWidth,
+         // markers:true,
+         // pin:true,
+         
+   },
+})
+
+// var t4 = gsap.timeline();
+t4.to(".footer-third h1",{
+   top:"3vw",
+   stagger:.1,
+})
 
 
 
 
 
+elastic()
 horizontalDiv()
 loader();
 lenis();
@@ -202,9 +287,9 @@ function horizontalDiv(){
    let t3 = gsap
    .timeline({
       scrollTrigger: {
-            trigger: "#page3",
+            trigger: "#page4",
             scrub:1,
-            start:"25% -30%",
+            start:"25% 25%",
             end:"25% -160%",
             // end: () => "+=" + document.querySelector(".containerThird").offsetWidth,
             // markers:true,

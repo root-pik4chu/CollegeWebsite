@@ -338,7 +338,7 @@ html.lenis, html.lenis body {
 
 #page3{
    width: 100%;
-   height: 180vh;
+   height: 165vh;
    background-color: var(--background);
    overflow:hidden;
 }
@@ -351,6 +351,8 @@ html.lenis, html.lenis body {
    width: 100%;
    height: 39vh;
    /* background-color: red; */
+   position: relative;
+
    color: #bbbbbb;
    justify-content: space-between;
 }
@@ -359,6 +361,7 @@ html.lenis, html.lenis body {
 .missionDiv{
    width: 60%;
    height:15vh;
+   position: relative;
    /* background-color: rgb(217, 217, 217); */
    align-items: start;
    justify-content: space-between;
@@ -406,9 +409,10 @@ html.lenis, html.lenis body {
 
 .third{
    width: 100%;
-   height: 80vh;
+   height: 70vh;
    /* background-color: pink; */
    position: relative;
+   margin-top: 4vw;
 }
 .containerThird{
    position: absolute;
@@ -458,6 +462,8 @@ html.lenis, html.lenis body {
    width: 100%;
    height: 100vh;
    background-color: var(--background);
+   overflow:hidden;
+
 }
 
 .wrapper{
@@ -467,9 +473,161 @@ html.lenis, html.lenis body {
 }
 
 
+.page4-Scroller-wrapper{
+   /* margin-top: 5vh; */
+   /* border: 1px solid #700000; */
+   width: 100%;
+   /* min-width: 1536px; */
+   margin-inline: auto;
+   position: relative;
+   height: 200px;
+   /* margin-top: 2vw; */
+   overflow: hidden;
+   mask-image: linear-gradient(to right ,
+      rgba(0, 0, 0, 0) ,
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0)
+   );
+   background-color: #bbbbbb;
+}
+
+
+@keyframes scrollLeft{
+   to{
+      left: -200px;
+   }
+}
+
+
+
+
+
+.item{
+   width: 200px;
+   height: 100px;
+   /* background-color: rgb(255, 91, 91); */
+   border-radius: 5px;
+   position: absolute;
+   left: max(calc(200px * 8) , 100%);
+   animation-name: scrollLeft;
+   animation-duration: 30s;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+}
+
+.item img{
+   width: 60%;
+}
+
+
+ .item1{ 
+   animation-delay: calc(30s / 8 * (8 - 1) * -1);
+}
+.item2{
+   animation-delay:calc(30s / 8 * (8 - 2) * -1) ;
+}
+.item3{
+   animation-delay:calc(30s / 8 * (8 - 3) * -1) ;
+}
+.item4{
+   animation-delay: calc(30s / 8 * (8 - 4) * -1);
+}
+.item5{
+   animation-delay:calc(30s / 8 * (8 - 5) * -1);
+}
+
+.item6{
+   animation-delay:calc(30s / 8 * (8 - 6) * -1);
+}
+.item7{
+   animation-delay:calc(30s / 8 * (8 - 7) * -1);
+}
+.item8{
+   animation-delay:calc(30s / 8 * (8 - 8) * -1);
+}
+
+.college-Info {
+   margin-top: 7vw;
+   width: 100%;
+   height: 40vh;
+   /* background-color: red; */
+   color: #bbbbbb;
+}
+
+.college{
+   border-left: 1px solid #717171;
+   width: 24%;
+   height: 100%;
+   /* background-color: green; */
+   /* padding-left: 2vw; */
+}
+.college:nth-child(1){
+   border-left: none;
+}
+.svg{
+   justify-content: start;
+   width: 300px;
+   height: 300px;
+}
+dotlottie-player{
+   width: 150px;
+   height: 150px;
+   /* background-color: red; */
+}
 
 #page5{
    width: 100%;
-   height: 100vh;
-   background-color: rgb(19, 8, 8);
+   height: 120vh;
+   background-color: var(--background);
+   /* align-items: start; */
+   overflow: hidden;
+   position: relative;
 }
+
+.svg-Line{
+   width: 1720px;
+   height: 90px;
+   /* position: relative; */
+   /* background-color: red   ; */
+   position: absolute;
+   top: 73vh;
+   z-index: 10;
+}
+
+
+.footer-first{
+   width: 95%;
+   height: 45vh;
+   background-color: black;
+}
+.footer-second{
+   width: 95%;
+   height: 40vh;
+   /* background-color: rgb(47, 47, 52); */
+   justify-content: space-between;
+   padding: 5vw 3vw;
+   color: #c5c5c58a;
+   /* line-height: 1vw; */
+   font-size: 1vw;
+   align-items: start;
+}
+.footer-third{
+   width: 95%;
+   height: 25vh;
+   
+   /* background-color: red; */
+}
+
+.footer-third h1{
+   font-size: 40vw;
+   color: #bbbbbb;
+   position: relative;
+   top: 20vw;
+}
+
+
+
+
+
+
