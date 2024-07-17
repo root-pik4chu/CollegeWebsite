@@ -14,6 +14,16 @@ function lenis(){
    gsap.ticker.lagSmoothing(0)
 }
 
+const hamMenu = document.querySelector(".button1");
+
+      const offScreenMenu = document.querySelector(".off-screen-menu");
+
+      hamMenu.addEventListener("click", () => {
+        hamMenu.classList.toggle("active");
+        offScreenMenu.classList.toggle("active");  
+      });
+
+
 function reveal_Item(){
    document.querySelectorAll(".reveal").forEach(function(elem){
 
@@ -266,7 +276,7 @@ t4.to(".footer-third h1",{
 
 
 elastic()
-horizontalDiv()
+// horizontalDiv()
 loader();
 lenis();
 magnet();
@@ -282,28 +292,38 @@ mouseFollower();
 
 //       })
 // });
-function horizontalDiv(){
-   let container = document.querySelector(".containerThird");
-   let t3 = gsap
-   .timeline({
-      scrollTrigger: {
-            trigger: "#page4",
-            scrub:1,
-            start:"25% 25%",
-            end:"25% -160%",
-            // end: () => "+=" + document.querySelector(".containerThird").offsetWidth,
-            // markers:true,
-            pin:true,
-      },
-   })
-   .to(container,{
-      
-      x: "-68%", //()=>-(container.scrollWidth - document.documentElement.clientWidth - 100)+"px",
-      ease: "none",
-   })
+
+let mm = gsap.matchMedia();
+
+// add a media query. When it matches, the associated function will run
+mm.add("(min-width: 800px)", () => {
+   function horizontalDiv(){
+      let container = document.querySelector(".containerThird");
+      let t3 = gsap
+      .timeline({
+         scrollTrigger: {
+               trigger: "#page4",
+               scrub:1,
+               start:"25% 25%",
+               end:"25% -160%",
+               // end: () => "+=" + document.querySelector(".containerThird").offsetWidth,
+               // markers:true,
+               pin:true,
+         },
+      })
+      .to(container,{
+         
+         x: "-68%", //()=>-(container.scrollWidth - document.documentElement.clientWidth - 100)+"px",
+         ease: "none",
+      })
+   
+   
+   }
+   horizontalDiv();
+});
 
 
-}
+
 
 
 var swiper = new Swiper(".right .mySwiper", {

@@ -67,6 +67,79 @@ width: 100%;
    top: 5%;
    gap: 10px;
 }
+/* ..ham-menu {
+   height: 100%;
+   width: 100%;
+   position: relative;
+   background-color: red;
+   
+} */
+.button1 span{
+   height: 2px;
+   width: 50%;
+   background-color: var(--background);
+   position: absolute;
+   top: 50%;
+   left: 50%;transform: translate(-50% , -50%);
+   transition: .3s ease;
+}
+
+.button1 span:nth-child(1){
+   top: 40%;
+
+}
+
+.button1 span:nth-child(3){
+   top: 60%;
+   /* left: 60%; */
+   /* width: 30%; */
+}
+.button1.active span {
+   background-color: var(--background);
+ }
+ 
+ .button1.active span:nth-child(1) {
+   top: 50%;
+   transform: translate(-50%, -50%) rotate(45deg);
+ }
+ .button1.active span:nth-child(2) {
+   opacity: 0;
+ }
+ .button1.active span:nth-child(3) {
+   top: 50%;
+   transform: translate(-50%, -50%) rotate(-45deg);
+ }
+
+ .off-screen-menu {
+   background-color: #bbbbbb;
+   height: 100vh;
+   width: 100%;
+   max-width: 450px;
+   position: fixed;
+   top: 0;
+   right: -450px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   font-size: 3rem;
+   transition: 0.3s ease;
+   z-index: 999;
+ }
+ .off-screen-menu.active {
+   right: 0;
+ }
+
+
+
+
+
+
+
+
+
+
 
 #main{
    /* position: relative; */
@@ -435,9 +508,24 @@ html.lenis, html.lenis body {
 
 .textDiv{
    width: 40%;
-   height: 100%;
-   
+   height: 60vh;
+   justify-content: end;
+   align-items: start;
+   padding: 1vw;
+   padding-bottom: 3vw;
+   color: #bbbbbb;
+   gap: 1vw;
 }
+.textDiv .btn{
+   
+   color: var(--background);
+   border-radius: 50px  ;
+   width: fit-content;
+   height: fit-content;
+   padding: .5vw 1vw;
+   background-color: #bbbbbb;
+}
+
 .imageDiv{
    width: 60%;
    height: 100%;
@@ -579,7 +667,7 @@ dotlottie-player{
 #page5{
    width: 100%;
    height: 120vh;
-   background-color: var(--background);
+   background-color: rgb(241 243 244);
    /* align-items: start; */
    overflow: hidden;
    position: relative;
@@ -591,15 +679,23 @@ dotlottie-player{
    /* position: relative; */
    /* background-color: red   ; */
    position: absolute;
-   top: 73vh;
-   z-index: 10;
+   top: 77vh;
+   z-index: 1000;
+   
 }
 
 
 .footer-first{
-   width: 95%;
-   height: 45vh;
+   width: 100%;
+   height: 55vh;
    background-color: black;
+   /* padding-top: 2vw; */
+}
+
+iframe{
+   width: 100%;
+   height: 100%;
+   
 }
 .footer-second{
    width: 95%;
@@ -607,15 +703,17 @@ dotlottie-player{
    /* background-color: rgb(47, 47, 52); */
    justify-content: space-between;
    padding: 5vw 3vw;
-   color: #c5c5c58a;
+   color: #3030308a;
    /* line-height: 1vw; */
    font-size: 1vw;
    align-items: start;
+   z-index: 999;
+
 }
 .footer-third{
    width: 95%;
    height: 25vh;
-   
+   line-height: 5vh;
    /* background-color: red; */
 }
 
@@ -624,6 +722,169 @@ dotlottie-player{
    color: #bbbbbb;
    position: relative;
    top: 20vw;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:430px) {
+   #page1{
+      height: 120vh;
+   }
+   #loader .parent .child{
+      font-size: 8vw;
+      padding: .5vw;
+   }
+   .button1{
+      width: 70px;
+    height: 70px;
+   }
+   .video video{
+      scale: 3;
+      transform: translateY(17vw);
+   }
+   .text-on-video {
+      height: 40vh;
+      top: 60%;
+    align-items: center;
+   }
+   .text-on-video h1 {
+      font-size: 28vw;
+   }
+   .about{
+      flex-direction: column;
+   }
+   .right_head{
+      width: 100%;
+      height: 20%;
+   }
+   .elem {
+      transform: rotate(0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+   .right{
+      width: 95%;
+      height: 50%;
+   }
+   .swiper-pagination-bullet {
+      width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 4px));
+      height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 4px));
+   }
+   .left{
+      width: 100%;
+   }
+   .leftUp {
+      width: 100%;
+      height: 100%;
+      /* background-color: red; */
+      /* padding-left: 14vw; */
+      /* padding-right: 5vw; */
+      /* padding-left: 5vw; */
+      padding-left: 5vw;
+      font-size: 1vw;
+      text-align: justify;
+   }
+   .leftUp h1{
+      /* font-size: 5vw;
+       */
+       display: none;
+   }
+   .leftUp p {
+      font-size: 3vw;
+      line-height: 4.5vw;
+      padding-bottom: 4vw;
+   }
+   .normal {
+      width: 25%;
+      height: 31%;
+   }
+   .normal h3{
+      font-size: 3vw;
+   }
+   .missionDiv p {
+      font-size: 3vw;
+      padding-bottom: 5vw ;
+   }
+   .missionDiv {
+      width: 89%;
+   }
+   .first{
+      margin-top: 0;
+   }
+   .mySwiper1 .swiper-slide .normal {
+      height: 8vw;
+      width: 35%;
+   }
+   .normal h4{
+      font-size: 3vw;
+   }
+   .mySwiper1 .swiper-slide h5 {
+      font-size: 4vw;
+      padding: 3vw;
+   }
+   #page3 {
+      width: 100%;
+      height: 260vh;
+   }
+   .college-Info {
+      flex-direction: column;
+      justify-content: start;
+   }
+   .small-head{
+      display: flex;
+      /* align-items: center; */
+      justify-content: center;
+      flex-direction: column;
+   }
+   .small-head h3{
+      padding-bottom: 3vw;
+   }
+   .svg {
+      justify-content: center;
+   }
+   .college-Info {
+      
+      height: 44vh;
+   }
+   .college {
+      border-left: 0;
+   }
+   .page4-Scroller-wrapper {
+
+      height: 130px;
+   }
+   #page4 {
+      width: 100%;
+      height: 390vh;
+      overflow: auto;
+   }
+   .containerThird {
+      width: 100%;
+      height: 559vw;
+      top: 5vw;
+      position: relative;
+      flex-direction: column;
+   }
+   .div{
+      /* left: -44vw; */
+      width: 95%;
+      position: relative;
+    top: 95vw;
+    flex-direction: column;
+   }
+   .imageDiv {
+      width: 100%;
+   }
+   .textDiv {
+      width: 40%;
+      height: 25%;
+   }
 }
 
 
