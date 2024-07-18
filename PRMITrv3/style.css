@@ -31,6 +31,7 @@ width: 100%;
    --background: rgb(9, 22, 18);
    --textColor:#bbbbbb;
    --buttonColor:rgb(13, 30, 25);
+   --white: #f1f3f4;
 }
 
 
@@ -52,7 +53,7 @@ width: 100%;
    width: 150px;
    height: 150px;
    border-radius: 50%;
-   background-color: #bbbbbb;
+   background-color: var(--white);
   border: none;
    z-index: 1000;
 }
@@ -183,7 +184,8 @@ html.lenis, html.lenis body {
    position: absolute;
    width: 100%;
    height: 100vh;
-   background-color: rgb(200, 200, 200);
+   /* background-color: rgb(200, 200, 200); */
+   /* background-color: var(--background); */
 }
 .parent{
    display: block;
@@ -241,10 +243,15 @@ html.lenis, html.lenis body {
    width: 100%;
    height: 20vh;
    top: 80%;
-   justify-content: start;
+   justify-content: space-between;
+   align-items: end;
+   padding-right: 2vw;
    /* background-color: red; */
    background-color: var(--background);
    color: var(--textColor);
+}
+.auto{
+   padding-bottom: 2vw;
 }
 .text-on-video h1{
    font-size: 8vw;
@@ -352,12 +359,13 @@ html.lenis, html.lenis body {
 .swiper {
    width: 100%;
    height: 100%;
+   
  }
 
  .swiper-slide {
    text-align: center;
    font-size: 18px;
-   background: #fff;
+   background-color: #fff;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -378,7 +386,7 @@ html.lenis, html.lenis body {
    border-radius: 0;
  }
  .swiper-pagination-bullet-active {
-   background-color: #ffffff !important;
+   background-color: #000000 !important;
  }
 
 
@@ -464,7 +472,7 @@ html.lenis, html.lenis body {
 }
 .mySwiper1 .swiper-slide{
    border-radius: 5px;
-   background-color: var(--textColor);
+   background-color: var(--white);
    align-items: start;
    
 }
@@ -577,7 +585,7 @@ html.lenis, html.lenis body {
       rgba(0, 0, 0, 1) 80%,
       rgba(0, 0, 0, 0)
    );
-   background-color: #bbbbbb;
+   background-color:var(--white);
 }
 
 
@@ -724,6 +732,17 @@ iframe{
    top: 20vw;
 }
 
+/*! animation time */
+.leftUp .parent .child{
+   font-size: 2vw;
+   font-weight: 900;
+   /* background-color: red; */
+   display: block;
+   transform: translateY(100%);
+}
+
+
+ 
 
 
 

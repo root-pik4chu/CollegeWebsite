@@ -224,28 +224,29 @@ tl.to('.parent .child',{
 
 .to("#loader",{
    height:0,
-   duration:1,
+   duration:.5,
    ease:Circ.easeInOut,
 
 })
 .to("#greenScreen",{
    top:0,
    height:"100vh",
-   duration:1,
-   delay:"-.8",
+   duration:.5,
+   delay:"-.3",
    ease:Circ.easeInOut,
 
 })
 .to("#greenScreen",{
    height:"0vh",
-   delay:"-.2",
+   delay:"-.1",
 
-   duration:1,
+   duration:.3,
    ease:Circ.easeInOut,
 
 })
 .to("#page1",{
-   duration:1,
+   
+   duration:2,
    opacity:1,
 })
 
@@ -271,6 +272,22 @@ t4.to(".footer-third h1",{
    stagger:.1,
 })
 
+
+
+
+// brummm bhrummm
+
+// function notOperator(){
+
+//    let isloggged = false;
+
+//    if(!isloggged) console.log("your not login");
+//    else console.log("yo yo you logged in");
+// }
+
+
+// // 
+// notOperator();
 
 
 
